@@ -9,13 +9,15 @@
   "description": "Displays a small badge for a product card.",
   "textdomain": "bricotools-blocks",
   "editorScript": "file:./build/index.js",
-  "style": "file:./style.css",
+  "style": "file:./build/style-index.css",
   "attributes": {
     "label": {
       "type": "string",
-      "source": "text",
-      "selector": ".badge-text",
       "default": "Digital"
+    },
+    "onlyDownloadable": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
