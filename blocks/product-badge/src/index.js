@@ -2,11 +2,14 @@ import { registerBlockType } from '@wordpress/blocks';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-registerBlockType('bricotools-blocks/product-card-badge', {
-  title: __('Product Card Badge', 'bricotools-blocks'),
+registerBlockType('bricotools-blocks/product-badge', {
+  title: __('Product Badge', 'bricotools-blocks'),
   icon: 'tag',
   category: 'widgets',
-  description: __('Displays a small badge for a product card.', 'bricotools-blocks'),
+  description: __(
+    'Displays a small badge for a product card.',
+    'bricotools-blocks',
+  ),
   attributes: {
     label: {
       type: 'string',
@@ -23,10 +26,10 @@ registerBlockType('bricotools-blocks/product-card-badge', {
 
     return (
       <div {...blockProps}>
-        <span className="badge-square"></span>
+        <span className='badge-square'></span>
         <RichText
-          tagName="span"
-          className="badge-text"
+          tagName='span'
+          className='badge-text'
           value={label}
           onChange={(nextLabel) => setAttributes({ label: nextLabel })}
           placeholder={__('Badge label…', 'bricotools-blocks')}
@@ -39,13 +42,9 @@ registerBlockType('bricotools-blocks/product-card-badge', {
     const { label } = attributes;
 
     return (
-      <div className="brico-product-badge">
-        <span className="badge-square"></span>
-        <RichText.Content
-          tagName="span"
-          className="badge-text"
-          value={label}
-        />
+      <div className='brico-product-badge'>
+        <span className='badge-square'></span>
+        <RichText.Content tagName='span' className='badge-text' value={label} />
       </div>
     );
   },
