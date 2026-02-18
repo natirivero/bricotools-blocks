@@ -1,0 +1,18 @@
+{
+  "name": "bricotools-blocks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BricoTools custom Gutenberg blocks.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "npm run build:icon-add-to-card && npm run build:product-card-badge",
+    "start": "npm run start:icon-add-to-card && npm run start:product-card-badge",
+    "build:icon-add-to-card": "wp-scripts build ./blocks/icon-add-to-card/src/index.js --output-path=./blocks/icon-add-to-card/build",
+    "start:icon-add-to-card": "wp-scripts start ./blocks/icon-add-to-card/src/index.js --output-path=./blocks/icon-add-to-card/build",
+    "build:product-card-badge": "wp-scripts build ./blocks/product-card-badge/src/index.js --output-path=./blocks/product-card-badge/build",
+    "start:product-card-badge": "wp-scripts start ./blocks/product-card-badge/src/index.js --output-path=./blocks/product-card-badge/build"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.4.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "bricotools-blocks/product-card-badge",
+  "version": "1.0.0",
+  "title": "Product Card Badge",
+  "category": "widgets",
+  "icon": "tag",
+  "description": "Displays a small badge for a product card.",
+  "textdomain": "bricotools-blocks",
+  "editorScript": "file:./build/index.js",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "source": "text",
+      "selector": "span",
+      "default": "Digital"
+    }
+  }
+}

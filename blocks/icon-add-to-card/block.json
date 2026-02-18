@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "bricotools-blocks/icon-add-to-card",
+  "version": "1.0.0",
+  "title": "Icon Add to Card",
+  "category": "widgets",
+  "icon": "plus-alt2",
+  "description": "Displays an add-to-card icon.",
+  "textdomain": "bricotools-blocks",
+  "editorScript": "file:./build/index.js"
+}
