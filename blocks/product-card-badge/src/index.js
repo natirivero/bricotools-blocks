@@ -11,39 +11,42 @@ registerBlockType('bricotools-blocks/product-card-badge', {
     label: {
       type: 'string',
       source: 'text',
-      selector: 'span',
+      selector: '.badge-text',
       default: __('Digital', 'bricotools-blocks'),
     },
   },
   edit({ attributes, setAttributes }) {
     const { label } = attributes;
     const blockProps = useBlockProps({
-      className: 'bricotools-product-card-badge',
+      className: 'brico-product-badge',
     });
 
     return (
-      <RichText
-        {...blockProps}
-        tagName="span"
-        value={label}
-        onChange={(nextLabel) => setAttributes({ label: nextLabel })}
-        placeholder={__('Badge label…', 'bricotools-blocks')}
-        allowedFormats={[]}
-      />
+      <div {...blockProps}>
+        <span className="badge-square"></span>
+        <RichText
+          tagName="span"
+          className="badge-text"
+          value={label}
+          onChange={(nextLabel) => setAttributes({ label: nextLabel })}
+          placeholder={__('Badge label…', 'bricotools-blocks')}
+          allowedFormats={[]}
+        />
+      </div>
     );
   },
   save({ attributes }) {
     const { label } = attributes;
-    const blockProps = useBlockProps.save({
-      className: 'bricotools-product-card-badge',
-    });
 
     return (
-      <RichText.Content
-        {...blockProps}
-        tagName="span"
-        value={label}
-      />
+      <div className="brico-product-badge">
+        <span className="badge-square"></span>
+        <RichText.Content
+          tagName="span"
+          className="badge-text"
+          value={label}
+        />
+      </div>
     );
   },
 });
