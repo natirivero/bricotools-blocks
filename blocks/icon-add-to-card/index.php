@@ -4,51 +4,53 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-if (! function_exists('bricotools_blocks_render_icon_add_to_card')) {
-  function bricotools_blocks_render_icon_add_to_card($attributes, $content, $block)
+if (! function_exists('bricotools_blocks_register_icon_add_to_cart_variation_assets')) {
+  function bricotools_blocks_register_icon_add_to_cart_variation_assets()
   {
-    if (! function_exists('wc_get_product')) {
-      return '';
+    $asset_path = BTB_PATH . 'blocks/icon-add-to-card/build/index.asset.php';
+
+    if (! file_exists($asset_path)) {
+      return;
     }
 
-    $post_id = 0;
+    $asset = include $asset_path;
 
-    if (isset($block->context['postId'])) {
-      $post_id = (int) $block->context['postId'];
-    }
-
-    if ($post_id <= 0) {
-      $post_id = (int) get_the_ID();
-    }
-
-    if ($post_id <= 0) {
-      return '';
-    }
-
-    $product = wc_get_product($post_id);
-
-    if (! $product instanceof WC_Product) {
-      return '';
-    }
-
-    if (! $product->is_purchasable() || ! $product->is_in_stock()) {
-      return '';
-    }
-
-    $add_to_cart_url = class_exists('WC_AJAX')
-      ? WC_AJAX::get_endpoint('add_to_cart')
-      : home_url('/?wc-ajax=add_to_cart');
-
-    $fragments_url = class_exists('WC_AJAX')
-      ? WC_AJAX::get_endpoint('get_refreshed_fragments')
-      : home_url('/?wc-ajax=get_refreshed_fragments');
-
-    return sprintf(
-      '<button type="button" class="bricotools-icon-add-to-card btb-ajax-add-to-cart" data-product-id="%1$d" data-quantity="1" data-add-to-cart-url="%2$s" data-fragments-url="%3$s" aria-label="%4$s">+</button>',
-      (int) $product->get_id(),
-      esc_url($add_to_cart_url),
-      esc_url($fragments_url),
-      esc_attr__('Add to cart', 'bricotools-blocks')
+    wp_register_script(
+      'btb-icon-add-to-cart-variation',
+      BTB_URL . 'blocks/icon-add-to-card/build/index.js',
+      isset($asset['dependencies']) ? $asset['dependencies'] : array(),
+      isset($asset['version']) ? $asset['version'] : '1.0.0',
+      true
     );
+
+    $style_path = BTB_PATH . 'blocks/icon-add-to-card/build/style-index.css';
+
+    if (file_exists($style_path)) {
+      wp_register_style(
+        'btb-icon-add-to-cart-variation-style',
+        BTB_URL . 'blocks/icon-add-to-card/build/style-index.css',
+        array(),
+        (string) filemtime($style_path)
+      );
+    }
   }
 }
+add_action('init', 'bricotools_blocks_register_icon_add_to_cart_variation_assets');
+
+if (! function_exists('bricotools_blocks_enqueue_icon_add_to_cart_variation_script')) {
+  function bricotools_blocks_enqueue_icon_add_to_cart_variation_script()
+  {
+    wp_enqueue_script('btb-icon-add-to-cart-variation');
+  }
+}
+add_action('enqueue_block_editor_assets', 'bricotools_blocks_enqueue_icon_add_to_cart_variation_script');
+
+if (! function_exists('bricotools_blocks_enqueue_icon_add_to_cart_variation_style')) {
+  function bricotools_blocks_enqueue_icon_add_to_cart_variation_style()
+  {
+    if (wp_style_is('btb-icon-add-to-cart-variation-style', 'registered')) {
+      wp_enqueue_style('btb-icon-add-to-cart-variation-style');
+    }
+  }
+}
+add_action('enqueue_block_assets', 'bricotools_blocks_enqueue_icon_add_to_cart_variation_style');
