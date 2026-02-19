@@ -1,11 +1,17 @@
 .brico-product-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.brico-product-badge-inner {
   position: relative;
   height: 42px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
-.brico-product-badge .badge-square::before {
+.brico-product-badge-inner .badge-square::before {
   content: '';
   position: absolute;
   top: 0;
@@ -17,7 +23,7 @@
   line-height: 1;
   z-index: -1;
 }
-.brico-product-badge .badge-text {
+.brico-product-badge-inner .badge-text {
   margin-left: var(--wp--preset--spacing--x-small);
   font-weight: 700;
 }

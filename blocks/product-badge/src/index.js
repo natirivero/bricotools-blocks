@@ -63,15 +63,17 @@ registerBlockType('bricotools-blocks/product-badge', {
         </InspectorControls>
 
         <div {...blockProps}>
-          <span className='badge-square'></span>
-          <RichText
-            tagName='span'
-            className='badge-text'
-            value={label}
-            onChange={(nextLabel) => setAttributes({ label: nextLabel })}
-            placeholder={__('Badge label…', 'bricotools-blocks')}
-            allowedFormats={[]}
-          />
+          <div className='brico-product-badge-inner'>
+            <span className='badge-square'></span>
+            <RichText
+              tagName='span'
+              className='badge-text'
+              value={label}
+              onChange={(nextLabel) => setAttributes({ label: nextLabel })}
+              placeholder={__('Badge label…', 'bricotools-blocks')}
+              allowedFormats={[]}
+            />
+          </div>
         </div>
       </>
     );

@@ -52,7 +52,7 @@ if (! function_exists('bricotools_blocks_render_product_badge')) {
     }
 
     return sprintf(
-      '<div class="brico-product-badge"><span class="badge-square"></span><span class="badge-text">%s</span></div>',
+      '<div class="brico-product-badge"><div class="brico-product-badge-inner"><span class="badge-square"></span><span class="badge-text">%s</span></div></div>',
       esc_html($label)
     );
   }
