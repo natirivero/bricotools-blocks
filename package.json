@@ -5,10 +5,10 @@
   "description": "BricoTools custom Gutenberg blocks.",
   "license": "GPL-2.0-or-later",
   "scripts": {
-    "build": "npm run build:icon-add-to-card && npm run build:product-badge",
-    "start": "npm run start:icon-add-to-card && npm run start:product-badge",
-    "build:icon-add-to-card": "wp-scripts build ./blocks/icon-add-to-card/src/index.js --output-path=./blocks/icon-add-to-card/build",
-    "start:icon-add-to-card": "wp-scripts start ./blocks/icon-add-to-card/src/index.js --output-path=./blocks/icon-add-to-card/build",
+    "build": "npm run build:icon-add-to-cart && npm run build:product-badge",
+    "start": "npm run start:icon-add-to-cart && npm run start:product-badge",
+    "build:icon-add-to-cart": "wp-scripts build ./blocks/icon-add-to-cart/src/index.js --output-path=./blocks/icon-add-to-cart/build",
+    "start:icon-add-to-cart": "wp-scripts start ./blocks/icon-add-to-cart/src/index.js --output-path=./blocks/icon-add-to-cart/build",
     "build:product-badge": "wp-scripts build ./blocks/product-badge/src/index.js --output-path=./blocks/product-badge/build",
     "start:product-badge": "wp-scripts start ./blocks/product-badge/src/index.js --output-path=./blocks/product-badge/build"
   },

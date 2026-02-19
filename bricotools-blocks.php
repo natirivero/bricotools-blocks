@@ -23,7 +23,7 @@ if (! defined('BTB_URL')) {
   define('BTB_URL', plugin_dir_url(__FILE__));
 }
 
-require_once BTB_PATH . '/blocks/icon-add-to-card/index.php';
+require_once BTB_PATH . '/blocks/icon-add-to-cart/index.php';
 require_once BTB_PATH . '/blocks/product-badge/index.php';
 
 // Discover and register every block inside /blocks/* based on block.json.
@@ -38,7 +38,7 @@ function bricotools_blocks_register_blocks()
     return;
   }
 
-  // Get all first-level block folders (e.g. /blocks/icon-add-to-card).
+  // Get all first-level block folders (e.g. /blocks/icon-add-to-cart).
   $block_folders = glob($blocks_dir . '/*', GLOB_ONLYDIR);
 
   // Guard against unexpected glob() failures.

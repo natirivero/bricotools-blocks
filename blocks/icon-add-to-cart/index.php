@@ -7,7 +7,7 @@ if (! defined('ABSPATH')) {
 if (! function_exists('bricotools_blocks_register_icon_add_to_cart_variation_assets')) {
   function bricotools_blocks_register_icon_add_to_cart_variation_assets()
   {
-    $asset_path = BTB_PATH . 'blocks/icon-add-to-card/build/index.asset.php';
+    $asset_path = BTB_PATH . 'blocks/icon-add-to-cart/build/index.asset.php';
 
     if (! file_exists($asset_path)) {
       return;
@@ -17,18 +17,18 @@ if (! function_exists('bricotools_blocks_register_icon_add_to_cart_variation_ass
 
     wp_register_script(
       'btb-icon-add-to-cart-variation',
-      BTB_URL . 'blocks/icon-add-to-card/build/index.js',
+      BTB_URL . 'blocks/icon-add-to-cart/build/index.js',
       isset($asset['dependencies']) ? $asset['dependencies'] : array(),
       isset($asset['version']) ? $asset['version'] : '1.0.0',
       true
     );
 
-    $style_path = BTB_PATH . 'blocks/icon-add-to-card/build/style-index.css';
+    $style_path = BTB_PATH . 'blocks/icon-add-to-cart/build/style-index.css';
 
     if (file_exists($style_path)) {
       wp_register_style(
         'btb-icon-add-to-cart-variation-style',
-        BTB_URL . 'blocks/icon-add-to-card/build/style-index.css',
+        BTB_URL . 'blocks/icon-add-to-cart/build/style-index.css',
         array(),
         (string) filemtime($style_path)
       );
