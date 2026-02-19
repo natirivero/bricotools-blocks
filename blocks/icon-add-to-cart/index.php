@@ -33,6 +33,17 @@ if (! function_exists('bricotools_blocks_register_icon_add_to_cart_variation_ass
         (string) filemtime($style_path)
       );
     }
+
+    $editor_style_path = BTB_PATH . 'blocks/icon-add-to-cart/build/index.css';
+
+    if (file_exists($editor_style_path)) {
+      wp_register_style(
+        'btb-icon-add-to-cart-variation-editor-style',
+        BTB_URL . 'blocks/icon-add-to-cart/build/index.css',
+        array(),
+        (string) filemtime($editor_style_path)
+      );
+    }
   }
 }
 add_action('init', 'bricotools_blocks_register_icon_add_to_cart_variation_assets');
@@ -41,6 +52,10 @@ if (! function_exists('bricotools_blocks_enqueue_icon_add_to_cart_variation_scri
   function bricotools_blocks_enqueue_icon_add_to_cart_variation_script()
   {
     wp_enqueue_script('btb-icon-add-to-cart-variation');
+
+    if (wp_style_is('btb-icon-add-to-cart-variation-editor-style', 'registered')) {
+      wp_enqueue_style('btb-icon-add-to-cart-variation-editor-style');
+    }
   }
 }
 add_action('enqueue_block_editor_assets', 'bricotools_blocks_enqueue_icon_add_to_cart_variation_script');

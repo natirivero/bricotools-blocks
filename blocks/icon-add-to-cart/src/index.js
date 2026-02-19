@@ -4,6 +4,7 @@ import domReady from '@wordpress/dom-ready';
 import { __ } from '@wordpress/i18n';
 
 import './style.css';
+import './editor.css';
 
 domReady(() => {
   registerBlockVariation('woocommerce/product-button', {
