@@ -1,0 +1,1 @@
+{"version":3,"file":"./style-index.css","mappings":";;;AAAA;EACE,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,qBAAqB;AACvB","sources":["webpack://bricotools-blocks/./blocks/icon-add-to-card/src/style.css"],"sourcesContent":[".bricotools-icon-add-to-card {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  display: inline-block;\r\n}\r\n"],"names":[],"sourceRoot":""}
