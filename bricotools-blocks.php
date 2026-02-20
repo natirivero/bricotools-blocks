@@ -8,6 +8,7 @@
  * Author: BricoTools
  * Author URI: https://brico.tools
  * Text Domain: bricotools-blocks
+ * Domain Path: /languages
  */
 
 if (! defined('ABSPATH')) {
@@ -23,12 +24,20 @@ if (! defined('BTB_URL')) {
   define('BTB_URL', plugin_dir_url(__FILE__));
 }
 
+if (! function_exists('btb_load_textdomain')) {
+  function btb_load_textdomain()
+  {
+    load_plugin_textdomain('bricotools-blocks', false, dirname(plugin_basename(__FILE__)) . '/languages');
+  }
+}
+add_action('init', 'btb_load_textdomain');
+
 require_once BTB_PATH . '/blocks/icon-add-to-cart/index.php';
 require_once BTB_PATH . '/blocks/product-badge/index.php';
 
 // Discover and register every block inside /blocks/* based on block.json.
 // This lets you add new blocks by creating a folder with metadata + build files.
-function bricotools_blocks_register_blocks()
+function btb_register_blocks()
 {
   // Absolute path to the plugin's blocks directory.
   $blocks_dir = BTB_PATH . 'blocks';
@@ -60,7 +69,7 @@ function bricotools_blocks_register_blocks()
     $block_args = array();
 
     if ('product-badge' === $slug) {
-      $block_args['render_callback'] = 'bricotools_blocks_render_product_badge';
+      $block_args['render_callback'] = 'btb_render_product_badge';
     }
 
     // Register from folder metadata (reads block.json + generated assets).
@@ -69,4 +78,4 @@ function bricotools_blocks_register_blocks()
 }
 
 // Register blocks when WordPress initializes.
-add_action('init', 'bricotools_blocks_register_blocks');
+add_action('init', 'btb_register_blocks');

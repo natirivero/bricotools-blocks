@@ -1,10 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
-import {
-  InspectorControls,
-  RichText,
-  useBlockProps,
-} from '@wordpress/block-editor';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { Notice, PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import './style.css';
@@ -18,17 +14,13 @@ registerBlockType('bricotools-blocks/product-badge', {
     'bricotools-blocks',
   ),
   attributes: {
-    label: {
-      type: 'string',
-      default: __('Digital', 'bricotools-blocks'),
-    },
     onlyDownloadable: {
       type: 'boolean',
       default: true,
     },
   },
   edit({ attributes, setAttributes }) {
-    const { label, onlyDownloadable } = attributes;
+    const { onlyDownloadable } = attributes;
     const blockProps = useBlockProps({
       className: 'brico-product-badge',
     });
@@ -63,17 +55,12 @@ registerBlockType('bricotools-blocks/product-badge', {
         </InspectorControls>
 
         <div {...blockProps}>
-          <div className='brico-product-badge-inner'>
-            <span className='badge-square'></span>
-            <RichText
-              tagName='span'
-              className='badge-text'
-              value={label}
-              onChange={(nextLabel) => setAttributes({ label: nextLabel })}
-              placeholder={__('Badge label…', 'bricotools-blocks')}
-              allowedFormats={[]}
-            />
-          </div>
+          <Notice status='info' isDismissible={false}>
+            {__(
+              'This badge is shown only for some products, depending on their settings.',
+              'bricotools-blocks',
+            )}
+          </Notice>
         </div>
       </>
     );

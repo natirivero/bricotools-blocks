@@ -4,8 +4,8 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-if (! function_exists('bricotools_blocks_is_downloadable_product')) {
-  function bricotools_blocks_is_downloadable_product($post_id = 0)
+if (! function_exists('btb_is_downloadable_product')) {
+  function btb_is_downloadable_product($post_id = 0)
   {
     if ($post_id <= 0) {
       return false;
@@ -27,11 +27,10 @@ if (! function_exists('bricotools_blocks_is_downloadable_product')) {
   }
 }
 
-if (! function_exists('bricotools_blocks_render_product_badge')) {
-  function bricotools_blocks_render_product_badge($attributes, $content, $block)
+if (! function_exists('btb_render_product_badge')) {
+  function btb_render_product_badge($attributes, $content, $block)
   {
-    $label = isset($attributes['label']) ? trim((string) $attributes['label']) : 'Digital';
-    $label = '' === $label ? 'Digital' : $label;
+    $label = __('Digital', 'bricotools-blocks');
 
     $only_downloadable = ! isset($attributes['onlyDownloadable']) || (bool) $attributes['onlyDownloadable'];
 
@@ -46,7 +45,7 @@ if (! function_exists('bricotools_blocks_render_product_badge')) {
         $post_id = (int) get_the_ID();
       }
 
-      if (! bricotools_blocks_is_downloadable_product($post_id)) {
+      if (! btb_is_downloadable_product($post_id)) {
         return '';
       }
     }

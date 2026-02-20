@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "2026-02-20 00:00+0000",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "blocks\/product-badge\/src\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Product Badge": [
+                "Insignia de producto"
+            ],
+            "Displays a small badge for a product card.": [
+                "Muestra una peque\u00f1a insignia para una tarjeta de producto."
+            ],
+            "Display Settings": [
+                "Ajustes de visualizaci\u00f3n"
+            ],
+            "Only show for downloadable products": [
+                "Mostrar solo para productos descargables"
+            ],
+            "Frontend: hidden for non-downloadable products.": [
+                "Frontend: oculta para productos no descargables."
+            ],
+            "Frontend: always shown (development mode).": [
+                "Frontend: siempre visible (modo desarrollo)."
+            ],
+            "This badge is shown only for some products, depending on their settings.": [
+                "Esta insignia se muestra solo en algunos productos, seg\u00fan su configuraci\u00f3n."
+            ]
+        }
+    }
+}

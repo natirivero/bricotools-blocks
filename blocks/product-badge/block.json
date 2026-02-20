@@ -11,10 +11,6 @@
   "editorScript": "file:./build/index.js",
   "style": "file:./build/style-index.css",
   "attributes": {
-    "label": {
-      "type": "string",
-      "default": "Digital"
-    },
     "onlyDownloadable": {
       "type": "boolean",
       "default": true

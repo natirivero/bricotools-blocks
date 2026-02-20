@@ -1,0 +1,95 @@
+# Copyright (C) 2026 BricoTools
+# This file is distributed under the same license as the BricoTools Blocks plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: BricoTools Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bricotools-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-20T00:57:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: bricotools-blocks\n"
+
+#. Plugin Name of the plugin
+#: bricotools-blocks.php
+msgid "BricoTools Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: bricotools-blocks.php
+msgid "https://brico.tools"
+msgstr ""
+
+#. Description of the plugin
+#: bricotools-blocks.php
+msgid "Custom blocks by BricoTools."
+msgstr ""
+
+#. Author of the plugin
+#: bricotools-blocks.php
+msgid "BricoTools"
+msgstr ""
+
+#: blocks/product-badge/index.php:33
+msgid "Digital"
+msgstr ""
+
+#: blocks/icon-add-to-cart/build/index.js:1
+#: blocks/icon-add-to-cart/src/index.js:12
+msgid "Icon Add to Cart"
+msgstr ""
+
+#: blocks/icon-add-to-cart/build/index.js:1
+#: blocks/icon-add-to-cart/src/index.js:13
+msgid "Product button variation styled as an icon-only add to cart button."
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:9
+msgid "Product Badge"
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:12
+msgid "Displays a small badge for a product card."
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:32
+msgid "Display Settings"
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:36
+msgid "Only show for downloadable products"
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:44
+msgid "Frontend: hidden for non-downloadable products."
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:48
+msgid "Frontend: always shown (development mode)."
+msgstr ""
+
+#: blocks/product-badge/build/index.js:1
+#: blocks/product-badge/src/index.js:59
+msgid "This badge is shown only for some products, depending on their settings."
+msgstr ""
+
+#: blocks/product-badge/block.json
+msgctxt "block title"
+msgid "Product Badge"
+msgstr ""
+
+#: blocks/product-badge/block.json
+msgctxt "block description"
+msgid "Displays a small badge for a product card."
+msgstr ""
